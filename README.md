@@ -1,8 +1,6 @@
 # MyMood
 Built by: Rohan Kewalramani
 
-#
-
 ### Description
 Chart your emotional landscape and discover your patterns with Aura, a modern and insightful mood journal designed for a more mindful you.
 
@@ -17,8 +15,8 @@ Aura makes it simple to log your daily feelings, add reflections on your day, an
 #
 
 ### Roadmap
-- [  ] Passcode & Face ID / Touch ID Lock
-- [  ] Customizable moods
-- [  ] Custom reminders
-- [  ] Home screen widgets
-- [  ] Apple Watch companion app
+- [ ] Passcode & Face ID / Touch ID Lock
+- [ ] Customizable moods
+- [ ] Custom reminders
+- [ ] Home screen widgets
+- [ ] Apple Watch companion app
