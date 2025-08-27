@@ -16,7 +16,9 @@ Aura makes it simple to log your daily feelings, add reflections on your day, an
 
 ### Roadmap
 - [ ] Passcode & Face ID / Touch ID Lock
+- [x] Create a splash screen
 - [ ] Customizable moods
-- [ ] Custom reminders
+- [ ] Work on AI trend seeker (i.e. 5 straight days of sadness - why?)
 - [ ] Home screen widgets
 - [ ] Apple Watch companion app
+- [ ] Add app to testflight
