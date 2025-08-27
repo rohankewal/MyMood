@@ -89,7 +89,7 @@ struct ContentView: View {
         userDefaults.set(Date(), forKey: "lastOpenDate")
     }
     
-    // ... existing loadData() and saveData() functions ...
+    // MARK: existing loadData() and saveData() functions
     private func loadData() {
         if let data = UserDefaults.standard.data(forKey: "moodLogs") {
             if let decoded = try? JSONDecoder().decode([MoodLog].self, from: data) {

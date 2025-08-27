@@ -29,7 +29,7 @@ struct OnboardingView: View {
                     .foregroundColor(.white)
                 
                 // Welcome Text
-                Text("Welcome to Aura")
+                Text("Welcome to MyMood")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -69,7 +69,7 @@ struct OnboardingView: View {
     }
 }
 
-// A helper view for styling feature rows
+// MARK: A helper view for styling feature rows
 struct FeatureRow: View {
     let icon: String
     let title: String
