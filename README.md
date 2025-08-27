@@ -1,5 +1,5 @@
 # MyMood
-Built by: Rohan Kewalramani
+Built by: [Rohan Kewalramani](https://rohankewal.surge.sh)
 
 ### Description
 Chart your emotional landscape and discover your patterns with Aura, a modern and insightful mood journal designed for a more mindful you.
@@ -15,10 +15,8 @@ Aura makes it simple to log your daily feelings, add reflections on your day, an
 #
 
 ### Roadmap
-- [ ] Passcode & Face ID / Touch ID Lock
 - [x] Create a splash screen
 - [ ] Customizable moods
 - [ ] Work on AI trend seeker (i.e. 5 straight days of sadness - why?)
-- [ ] Home screen widgets
 - [ ] Apple Watch companion app
 - [ ] Add app to testflight
