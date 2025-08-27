@@ -18,6 +18,8 @@ struct ContentView: View {
     @State private var dailyQuote: Quote?
     @State private var showDailyQuoteSplash = false
     
+    @State private var showOnboarding = false
+    
     var body: some View {
         TabView {
             NavigationView {
@@ -26,7 +28,7 @@ struct ContentView: View {
             .tabItem {
                 Label("Log Mood", systemImage: "plus.circle.fill")
             }
-
+            
             MoodHistoryView(moodLogs: $moodLogs)
                 .tabItem {
                     Label("History", systemImage: "list.bullet")
@@ -39,9 +41,13 @@ struct ContentView: View {
         }
         .onAppear {
             loadData()
+            checkForFirstLaunchEver()
             checkForFirstDailyOpen()
         }
         .onDisappear(perform: saveData)
+        .fullScreenCover(isPresented: $showOnboarding) {
+            OnboardingView(isPresented: $showOnboarding)
+        }
         // Use a full screen cover for a more immersive splash screen effect
         .fullScreenCover(isPresented: $showDailyQuoteSplash) {
             if let quote = dailyQuote {
@@ -49,7 +55,19 @@ struct ContentView: View {
             }
         }
     }
-
+    
+    private func checkForFirstLaunchEver() {
+        let userDefaults = UserDefaults.standard
+        let hasLaunchedBefore = userDefaults.bool(forKey: "hasLaunchedBefore")
+        
+        if !hasLaunchedBefore {
+            // This is the first launch
+            showOnboarding = true
+            // Set the flag to true so it won't show again
+            userDefaults.set(true, forKey: "hasLaunchedBefore")
+        }
+    }
+    
     private func checkForFirstDailyOpen() {
         let userDefaults = UserDefaults.standard
         let lastOpenDate = userDefaults.object(forKey: "lastOpenDate") as? Date
@@ -81,7 +99,7 @@ struct ContentView: View {
         }
         self.moodLogs = []
     }
-
+    
     private func saveData() {
         if let encoded = try? JSONEncoder().encode(moodLogs) {
             UserDefaults.standard.set(encoded, forKey: "moodLogs")
